@@ -1,7 +1,6 @@
 # Requirements
 
-* Capture all the requirements wrt system, module, interface, integration, testing, Functional and Non-functional
-* Captures Basic Planning of the project through - Sample Gantt Chart attached
-
-* Tools: MS Excel, MS word or Similar
+* The main requirement of the user to login is to know their own personal details and the exact details about the bus travel
+* The user have to provide the exact travel time, travel details so that it will clearly display in the output.
+* The User can also note what are all the bus available at that time.
 
