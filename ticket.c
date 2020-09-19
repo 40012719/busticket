@@ -24,17 +24,20 @@ void find();
 void coupon();
 void book_ticket();
 void old_bookings();
-void main(){
+void main()
+{
 	login();
 	int ch;
- 	while(1){
+ 	while(1)
+	{
 		printf("\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");	
 		printf("\n\t Book BUS Ticket \n");
 		printf("\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		printf("\nEnter >1< To Insert A Bus\nEnter >2< To View All bus\nEnter >3< To Find A Bus\nEnter >4< To Book A Ticket(s)\nEnter >5< To View All Recent Transactions\nEnter  >6< To view all coupans\nEnter >0< To Exit \nEnter your Choice :");
 	   	scanf("%d",&ch);
 	   	system("clear");	
-	   	switch (ch){
+	   	switch (ch)
+		{
 	    		case 1: insert_busdetails();
 	   			break;
 			case 2: viewAll();
@@ -52,7 +55,8 @@ void main(){
 	   	}
 	 }
 }
-void insert_busdetails(){
+void insert_busdetails()
+{
 	FILE *fp;
 	struct book b;
 	printf("Enter Bus no :- ");	
@@ -74,21 +78,25 @@ void insert_busdetails(){
 	fclose(fp);
 	system("clear");
 }
-void find(){
+void find()
+{
 	struct book b;
 	FILE *fp;
 	char ch[20];
 	printf("Enter bus number :");
 	scanf("%s",ch);
 	fp = fopen("data.txt","r");
-	if(fp == NULL){
+	if(fp == NULL
+	  ){
 		printf("File Not Found");
 		exit(0);
 	}
 	else{	
-		while(getc(fp) != EOF){
+		while(getc(fp) != EOF)
+		{
 			fscanf(fp,"%s %s %s %d",b.code,b.name,b.date,&b.cost);
-			if(strcmp(b.code,ch) == 0){	
+			if(strcmp(b.code,ch) == 0)
+			{	
 				printf("\n Record Found\n");
 				printf("\n\t\tbus number :%s",b.code);
 				printf("\n\t\tBus Name :%s",b.name);
@@ -109,15 +117,18 @@ void coupon()
 	scanf("%c%c",&r,&r);
 	system("clear");
 }
-void viewAll(){
+void viewAll()
+{
 	char ch;
 	FILE *fp;
 	fp = fopen("data.txt","r");
-	if(fp == NULL){
+	if(fp == NULL)
+	{
 		printf("File Not Found");
 		exit(0);
 	}
-	else{	
+	else
+	{	
 		system("clear");
 		while((ch=fgetc(fp))!=EOF)
       			printf("%c",ch);	
@@ -127,20 +138,23 @@ void viewAll(){
 	system("clear");
 	fclose(fp);
 }
-void book_ticket(){
+void book_ticket()
+{
 	struct book b;
 	FILE *fp;
 	FILE *ufp;
 	int total_seat,mobile,total_amount;
 	char name[20];
 	char ch;
-	char movie_code[20];
+	char bus_code[20];
 	fp = fopen("data.txt","r");
-	if(fp == NULL){
+	if(fp == NULL)
+	{
 		printf("file not found !");
 		exit(1);
 	}
-	else{	
+	else
+	{	
 		system("clear");
 		while( ( ch = fgetc(fp) ) != EOF )
       		printf("%c",ch);
@@ -148,20 +162,24 @@ void book_ticket(){
 	fclose(fp);
 	printf("\n For Book ticket Choice(Enter bus Code First Latter Of bus name)\n");
 	printf("\n Enter bus number :");
-	scanf("%s",movie_code);
+	scanf("%s",bus_code);
 	fp = fopen("data.txt","r");
-	if(fp == NULL){
+	if(fp == NULL)
+	{
 		printf("file not found !");
 		exit(1);
 	}
-	else{	
-		while(getc(fp) != EOF){
+	else
+	{	
+		while(getc(fp) != EOF)
+		{
 			fscanf(fp,"%s %s %s %d",b.code,b.name,b.date,&b.cost);
-			if(strcmp(b.code,movie_code) == 0){	
+			if(strcmp(b.code,bus_code) == 0)
+			{	
 				printf("\n Record Found\n");
 				printf("\n\t\tbus number :%s",b.code);
 				printf("\n\t\tbus name :%s",b.name);
-				printf("\n\t\tdate name :%s",b.date);
+				printf("\n\t\tdate :%s",b.date);
 				printf("\n\t\tPrice of ticket:%d",b.cost);
 			}
 		}
@@ -182,10 +200,12 @@ void book_ticket(){
 	printf("\n\t\tCost per ticket : %d",b.cost);
 	printf("\n\t\tTotal Amount : %d",total_amount);
 	ufp=fopen("oldTransection.txt","a");
-	if(ufp == NULL){
+	if(ufp == NULL)
+	{
 		printf("File not Found");
 	}
-	else{
+	else
+	{
 		fprintf(ufp,"%s %d %d %d %s %d \n",name,mobile,total_seat,total_amount,b.name,b.cost);
 		printf("\n Record insert Sucessfull to the old record file");
 	}
@@ -195,16 +215,19 @@ void book_ticket(){
 	fclose(ufp);
 	fclose(fp);
 }
-void old_bookings(){
+void old_bookings()
+{
 	char ch;
 	FILE *fp;
 	fp = fopen("oldTransection.txt","r");
-	if(fp == NULL){
+	if(fp == NULL)
+	{
 		printf("file not found !");
 		exit(1);
 
 	}
-	else{	
+	else
+	{	
 		system("clear");
 		while((ch=fgetc(fp))!=EOF)
       		printf("%c",ch);	
