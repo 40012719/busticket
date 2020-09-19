@@ -1,8 +1,6 @@
 /* BUS Ticket Booking */
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-char r;
+#include "header.h"
+
 void login(){
 		{
 			printf("\n\nWELCOME TO THE BUS BOOKING SYSTEM. LOGIN SUCCESSFUL\n");
