@@ -1,4 +1,4 @@
 # Behavior Diagrams
 
-## Add all the Behavior diagrams implememted
+#The behavioral diagram is attached above.
 
