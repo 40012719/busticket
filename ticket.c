@@ -11,12 +11,12 @@ void login(){
 
 		}
 }
-struct book{
+/*struct book{
 	char code[20];
 	char name[20];
 	char date[20];
 	int cost;
-}b;
+}b;*/
 int seat=80;
 void insert_busdetails();
 void viewAll();
