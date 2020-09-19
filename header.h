@@ -7,7 +7,7 @@ struct book{
 	char date[20];
 	int cost;
 }b;
-void login();
+/*void login();
 void insert_details();
 void view_All();
 void find();
