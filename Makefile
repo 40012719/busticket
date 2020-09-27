@@ -5,14 +5,11 @@ PROJECT_NAME = busticket
 BUILD = build
 
 # All source code files
-SRC = main.c\
-src/busticket.c\
+SRC = operations.c\
+src/header.c\
 
 # All test source files
-TEST_SRC = src/.c\
-test/test_primeNumber.c
 
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
 # All include folders with header files
 INC	= -Iinc
